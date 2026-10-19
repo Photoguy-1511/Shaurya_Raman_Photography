@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAURYA RAMAN — Photography Portfolio</title>
+    <meta name="description" content="Aviation, wildlife, street, and nature photography portfolio by Shaurya Raman. Visual stories framed through light, geometry, and atmosphere.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="SHAURYA RAMAN — Photography Portfolio">
+    <meta property="og:description" content="Minimalist contemporary photography portfolio showcasing aviation, street, wildlife, and landscape works.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0d0f0e;
+            --surface-color: #141816;
+            --card-color: #1c2220;
+            --text-main: #f0f0f2;
+            --text-muted: #8e8e93;
+            --accent-color: #ffffff;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --max-width: 1440px;
+        }
+
+        /* Base Resets */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 3rem;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 4px;
+        }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            box-shadow: none !important;
+            transition: var(--transition-smooth);
+        }
+
+        .site-header.scrolled {
+            background-color: rgba(20, 24, 22, 0.92) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .brand-logo {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+            position: relative;
+            padding-bottom: 4px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: var(--accent-color);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-main);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 101;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 1px;
+            background-color: var(--text-main);
+            transition: var(--transition-smooth);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                height: 100dvh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: var(--transition-smooth);
+            }
+
+            .nav-menu.is-active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 1.1rem;
+            }
+
+            .mobile-toggle.is-active span:nth-child(1) {
+                transform: translateY(3.5px) rotate(45deg);
+            }
+            .mobile-toggle.is-active span:nth-child(2) {
+                transform: translateY(-3.5px) rotate(-45deg);
+            }
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65) contrast(1.05);
+            transform: scale(1.03);
+            animation: heroZoom 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes heroZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.06); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(13,15,14,0.1) 0%, rgba(13,15,14,0.7) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.85rem, 2vw, 1.1rem);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            background: rgba(13, 15, 14, 0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-btn:hover {
+            border-color: var(--accent-color);
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 8rem 0 5rem;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 0 auto;
+            color: #d1d1d6;
+        }
+
+        .section-header {
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .filter-btn {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 0.25rem 0;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 1px;
+            background-color: var(--accent-color);
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            color: var(--text-main);
+        }
+
+        .filter-btn.active::after {
+            width: 100%;
+        }
+
+        /* Masonry Multi-Column Gallery */
+        .gallery-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+            width: 100%;
+        }
+
+        @media (min-width: 600px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                column-count: 3;
+                column-gap: 2rem;
+            }
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--surface-color);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .gallery-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-img-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+            filter: grayscale(15%);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.03);
+            filter: grayscale(0%);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 15, 14, 0.85) 0%, rgba(13, 15, 14, 0) 60%);
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+        }
+
+        .gallery-item-cat {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background-color: rgba(8, 10, 9, 0.96);
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-container {
+            position: relative;
+            max-width: 90vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-image-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            max-height: 75vh;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 72vh;
+            object-fit: contain;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .lightbox-caption {
+            margin-top: 1.25rem;
+            text-align: center;
+        }
+
+        .lightbox-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .lightbox-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+        }
+
+        .lightbox-exif {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            color: #a0a0a5;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .lightbox-btn {
+            position: absolute;
+            z-index: 1010;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .lightbox-close {
+            top: 2rem;
+            right: 2rem;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .lightbox-prev {
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
+
+        .lightbox-next {
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: 2.2rem;
+            left: 2.2rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+            .lightbox-close { top: 1rem; right: 1rem; }
+            .lightbox-counter { top: 1.2rem; left: 1rem; }
+            .lightbox-exif { flex-wrap: wrap; gap: 0.75rem; }
+        }
+
+        .about-section {
+            padding: 10rem 0 6rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr 1.2fr;
+            }
+        }
+
+        .about-image {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background-color: var(--surface-color);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .about-content-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-text {
+            color: #c0c0c6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .spec-item-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .spec-item-desc {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .contact-email::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .contact-email:hover::after {
+            background-color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .social-link:hover {
+            color: var(--accent-color);
+        }
+
+        .site-footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+
+        .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: none; /* Keeps your handle in lowercase as written */
+            color: var(--text-muted);
+        }
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+}
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="header">
+        <div class="container nav-wrapper">
+            <a href="#home" class="brand-logo" id="brandName">SHAURYA RAMAN</a>
+            
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <img id="heroImage" src="images\\misc\\m1.jpg" alt="Hero Photography">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroName">SHAURYA RAMAN</h1>
+                <p class="hero-subtitle" id="heroTagline">PHOTOGRAPHY</p>
+                <a href="#portfolio" class="hero-btn">View Portfolio</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="container">
+                <p class="intro-text" id="introBio">
+                    "Capturing the freedom of flight, the instinct of wildlife, and the unscripted moments of the streets."
+                </p>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">SELECTED WORKS</h2>
+                    
+                    <div class="filter-wrapper" id="filterContainer">
+                        <button class="filter-btn active" data-category="All">All</button>
+                        <button class="filter-btn" data-category="Aviation">Aviation</button>
+                        <button class="filter-btn" data-category="Street">Street</button>
+                        <button class="filter-btn" data-category="Wildlife">Wildlife</button>
+                        <button class="filter-btn" data-category="Other">Other</button>
+                    </div>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Dynamic JavaScript Rendering -->
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img id="aboutImage" src="images\\me\\Me.jpeg" alt="Photographer Portrait">
+                    </div>
+                    <div class="about-content">
+                        <h2 class="about-content-title">About the Artist</h2>
+                        <p class="about-text" id="aboutBioLong">
+                            Based in New Delhi, I’m an amateur photographer with a keen interest in aviation, wildlife, and street photography. From the precision of aviation photography to the unpredictability of wildlife and the spontaneity of street life, each offers a different challenge behind the lens. I’m drawn to the technical and creative sides of photography alike, constantly experimenting with composition, light, and perspective to make each frame my own.
+                        </p>
+
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <div class="spec-item-title">Primary Equipment</div>
+                                <div class="spec-item-desc" id="specCamera">Sony alpha 6000 / Nikon D300S</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-item-title">Favorite Lens</div>
+                                <div class="spec-item-desc">Sigma 150-600mm Contemporary</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-sub">GET IN TOUCH</div>
+                <a href="mailto:photoguy1511@gmail.com" id="contactEmail" class="contact-email">photoguy1511@gmail.com</a>
+                <div class="social-links">
+                    <a href="#" id="contactInstagram" target="_blank" rel="noopener" class="social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>@photoguy_1511</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrapper">
+            <div id="footerBrand">SHAURYA RAMAN PHOTOGRAPHY</div>
+            <div>&copy; <span id="year">2026</span> All rights reserved.</div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-hidden="true" aria-label="Image Preview Lightbox">
+        <div class="lightbox-counter" id="lightboxCounter">1 / 10</div>
+        
+        <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+        <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Previous Image">&#8249;</button>
+        <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next Image">&#8250;</button>
+
+        <div class="lightbox-container">
+            <div class="lightbox-image-wrapper">
+                <img src="" alt="" class="lightbox-img" id="lightboxImg">
+            </div>
+            <div class="lightbox-caption">
+                <div class="lightbox-title" id="lightboxTitle"></div>
+                <div class="lightbox-meta" id="lightboxCategory"></div>
+                <div class="lightbox-exif" id="lightboxExif"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* CONFIGURATION & PERSONALIZATION */
+        const CONFIG = {
+            name: "SHAURYA RAMAN",
+            brandTagline: "PHOTOGRAPHY",
+            email: "photoguy1511@gmail.com",
+            instagram: "https://www.instagram.com/photoguy_1511?xtok=ZDNlZDc0MzIxNw==",
+            introBio: "Capturing the freedom of flight, the instinct of wildlife, and the unscripted moments of the streets.",
+            longBio: "Based in New Delhi, I’m an amateur photographer with a keen interest in aviation, wildlife, and street photography. From the precision of aviation photography to the unpredictability of wildlife and the spontaneity of street life, each offers a different challenge behind the lens. I’m drawn to the technical and creative sides of photography alike, constantly experimenting with composition, light, and perspective to make each frame my own.",
+            cameraGear: "Sony alpha 6000 / Nikon D300S",
+            heroImageSrc: "images\\misc\\m1.jpg",
+            portraitSrc: "images\\me\\Me.jpeg"
+        };
+
+        /* PHOTOGRAPHY DATA STRUCTURE */
+        const photos = [
+            {
+                src: "images\\misc\\m2.jpg",
+                title: "A Roof Above the Rest",
+                category: "Other",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Tanah-lot, Bali"
+            },
+            {
+                src: "images\\aviation\\350 3.jpg",
+                title: "The Anatomy of Flight",
+                category: "Aviation",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                iso: "Airbus A350",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\wildlife\\w4.jpg",
+                title: "On the Brink",
+                category: "Wildlife",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\aviation\\350 1.jpg",
+                title: "Beneath the Wings",
+                category: "Aviation",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                iso: "Airbus A350",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\aviation\\350 2.jpg",
+                title: "Into the Blue",
+                category: "Aviation",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                iso: "Airbus A350",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\aviation\\747 1.jpg",
+                title: "The Queen Approaches",
+                category: "Aviation",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                iso: "Boeing 747",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\aviation\\747 2.jpg",
+                title: "An Icon in Motion",
+                category: "Aviation",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                iso: "Boeing 747",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\aviation\\747 3.jpg",
+                title: "Elegant Power",
+                category: "Aviation",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                iso: "Boeing 747",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\wildlife\\w1.jpg",
+                title: "Rain Man",
+                category: "Wildlife",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\wildlife\\w2.jpg",
+                title: "Chasing Light",
+                category: "Wildlife",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Kaziranga, India"
+            },
+            {
+                src: "images\\wildlife\\w3.jpg",
+                title: "Dancing in the Rain",
+                category: "Wildlife",
+                camera: "Nikon D300S",
+                lens: "Sigma 150-600mm Contemporary",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\wildlife\\w6.jpg",
+                title: "Woodland Grace",
+                category: "Wildlife",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Ranthambore, India"
+            },
+            {
+                src: "images\\wildlife\\w7.jpg",
+                title: "The Predator's Patience",
+                category: "Wildlife",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Ranthambore, India"
+            },
+            {
+                src: "images\\wildlife\\w8.jpg",
+                title: "Crowned by the Forest",
+                category: "Wildlife",
+               camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Ranthambore, India"
+            },
+            {
+                src: "images\\wildlife\\w9.jpg",
+                title: "The Unlikely Buddha",
+                category: "Wildlife",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Ranthambore, India"
+            },
+            {
+                src: "images\\wildlife\\w10.jpg",
+                title: "Born to Soar",
+                category: "Wildlife",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "New Delhi, India"
+            },
+            {
+                src: "images\\wildlife\\w11.jpg",
+                title: "Unhurried",
+                category: "Wildlife",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Ranthambore, India"
+            },
+            {
+                src: "images\\street\\s1.jpg",
+                title: "Night in Motion",
+                category: "Street",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Ubud, Bali"
+            },
+            {
+                src: "images\\street\\s2.jpg",
+                title: "The Names we leave Behind",
+                category: "Street",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Ubud, Bali"
+            },
+            {
+                src: "images\\street\\s3.jpg",
+                title: "Ubud, Between the Stalls",
+                category: "Street",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Ubud, Bali"
+            },
+            {
+                src: "images\\street\\s4.jpg",
+                title: "The Art of Noticing",
+                category: "Street",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Tanah-lot, Bali"
+            },
+            {
+                src: "images\\street\\s5.jpg",
+                title: "First Gold, First Catch",
+                category: "Street",
+                camera: "Sony a6000",
+                lens: "Sony 55-210mm",
+                location: "Nusa Dua, Bali"
+            },
+            {
+                src: "images\\misc\\m1.jpg",
+                title: "When the Sun Finds a Way",
+                category: "Other",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Tanah-lot, Bali"
+            },
+            {
+                src: "images\\misc\\m3.jpg",
+                title: "Between the Old and the Infinite",
+                category: "Other",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Tanah-lot, Bali"
+            },
+            {
+                src: "images\\misc\\m4.jpg",
+                title: "Rooted in the Sea",
+                category: "Other",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Tanah-lot, Bali"
+            },
+            {
+                src: "images\\misc\\n1.jpg",
+                title: "Bali's Evening Glow",
+                category: "Other",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Nusa Dua, Bali"
+            },
+            {
+                src: "images\\misc\\n2.jpg",
+                title: "The Sea Keeps the Light",
+                category: "Other",
+                camera: "Sony a6000",
+                lens: "Sony 16-50mm",
+                location: "Tanah-lot, Bali"
+            }
+            
+        ];
+        /* APPLICATION STATE & DOM REFERENCES */
+        let currentFilteredPhotos = [...photos];
+        let currentImageIndex = 0;
+
+        const galleryGrid = document.getElementById('galleryGrid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxCategory = document.getElementById('lightboxCategory');
+        const lightboxExif = document.getElementById('lightboxExif');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initPersonalization();
+            renderGallery('All');
+            initMobileMenu();
+            initFilterListeners();
+            initLightboxEvents();
+            initScrollAnimations();
+            initScrollSpy();
+        });
+
+        function initPersonalization() {
+            document.getElementById('brandName').textContent = CONFIG.name;
+            document.getElementById('heroName').textContent = CONFIG.name;
+            document.getElementById('heroTagline').textContent = CONFIG.brandTagline;
+            document.getElementById('introBio').textContent = `"${CONFIG.introBio}"`;
+            document.getElementById('aboutBioLong').textContent = CONFIG.longBio;
+            document.getElementById('specCamera').textContent = CONFIG.cameraGear;
+            document.getElementById('footerBrand').textContent = `${CONFIG.name} ${CONFIG.brandTagline}`;
+            
+            const emailElem = document.getElementById('contactEmail');
+            emailElem.textContent = CONFIG.email;
+            emailElem.href = `mailto:${CONFIG.email}`;
+            
+            const instaElem = document.getElementById('contactInstagram');
+            instaElem.href = CONFIG.instagram;
+
+            if (CONFIG.heroImageSrc) document.getElementById('heroImage').src = CONFIG.heroImageSrc;
+            if (CONFIG.portraitSrc) document.getElementById('aboutImage').src = CONFIG.portraitSrc;
+            
+            document.getElementById('year').textContent = new Date().getFullYear();
+        }
+
+        function renderGallery(category) {
+            galleryGrid.innerHTML = '';
+
+            if (category === 'All') {
+                currentFilteredPhotos = [...photos];
+            } else {
+                currentFilteredPhotos = photos.filter(photo => photo.category === category);
+            }
+
+            currentFilteredPhotos.forEach((photo, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.setAttribute('tabindex', '0');
+                galleryItem.setAttribute('role', 'button');
+                galleryItem.setAttribute('aria-label', `View ${photo.title}`);
+
+                galleryItem.innerHTML = `
+                    <div class="gallery-img-wrapper">
+                        <img class="gallery-img" src="${photo.src}" alt="${photo.title}" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-item-title">${photo.title}</div>
+                            <div class="gallery-item-cat">${photo.category}</div>
+                        </div>
+                    </div>
+                `;
+
+                galleryItem.addEventListener('click', () => openLightbox(index));
+                galleryItem.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(index);
+                    }
+                });
+
+                galleryGrid.appendChild(galleryItem);
+
+                setTimeout(() => {
+                    galleryItem.classList.add('is-visible');
+                }, index * 80);
+            });
+        }
+
+        function initFilterListeners() {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const category = btn.getAttribute('data-category');
+                    renderGallery(category);
+                });
+            });
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightboxContent();
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            preloadAdjacentPhotos();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxContent() {
+            const photo = currentFilteredPhotos[currentImageIndex];
+            if (!photo) return;
+
+            lightboxImg.style.opacity = '0.3';
+            lightboxImg.style.transform = 'scale(0.98)';
+
+            setTimeout(() => {
+                lightboxImg.src = photo.src;
+                lightboxImg.alt = photo.title;
+                lightboxTitle.textContent = photo.title;
+                lightboxCategory.textContent = photo.category;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentFilteredPhotos.length}`;
+
+                // Render EXIF tags if present
+                const exifFields = [];
+                if (photo.camera) exifFields.push(`<span>${photo.camera}</span>`);
+                if (photo.lens) exifFields.push(`<span>${photo.lens}</span>`);
+                if (photo.aperture) exifFields.push(`<span>${photo.aperture}</span>`);
+                if (photo.iso) exifFields.push(`<span> ${photo.iso}</span>`);
+                if (photo.location) exifFields.push(`<span>${photo.location}</span>`);
+                
+                lightboxExif.innerHTML = exifFields.join('&nbsp;&bull;&nbsp;');
+
+                lightboxImg.style.opacity = '1';
+                lightboxImg.style.transform = 'scale(1)';
+            }, 150);
+        }
+
+        function preloadAdjacentPhotos() {
+            if (currentFilteredPhotos.length <= 1) return;
+            const nextIdx = (currentImageIndex + 1) % currentFilteredPhotos.length;
+            const prevIdx = (currentImageIndex - 1 + currentFilteredPhotos.length) % currentFilteredPhotos.length;
+            
+            const imgNext = new Image();
+            imgNext.src = currentFilteredPhotos[nextIdx].src;
+            const imgPrev = new Image();
+            imgPrev.src = currentFilteredPhotos[prevIdx].src;
+        }
+
+        function prevLightboxImage() {
+            currentImageIndex = (currentImageIndex - 1 + currentFilteredPhotos.length) % currentFilteredPhotos.length;
+            updateLightboxContent();
+            preloadAdjacentPhotos();
+        }
+
+        function nextLightboxImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentFilteredPhotos.length;
+            updateLightboxContent();
+            preloadAdjacentPhotos();
+        }
+
+        function initLightboxEvents() {
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', prevLightboxImage);
+            lightboxNext.addEventListener('click', nextLightboxImage);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-container') || e.target.classList.contains('lightbox-image-wrapper')) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevLightboxImage();
+                if (e.key === 'ArrowRight') nextLightboxImage();
+            });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchEndX < touchStartX - 50) nextLightboxImage();
+                if (touchEndX > touchStartX + 50) prevLightboxImage();
+            }, { passive: true });
+        }
+
+        function initMobileMenu() {
+            const toggle = document.getElementById('mobileToggle');
+            const menu = document.getElementById('navMenu');
+
+            toggle.addEventListener('click', () => {
+                toggle.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggle.classList.remove('is-active');
+                    menu.classList.remove('is-active');
+                });
+            });
+        }
+
+        function initScrollAnimations() {
+            const header = document.getElementById('header');
+            
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+
+            handleScroll();
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            sections.forEach(section => observer.observe(section));
+        }
+    </script>
+</body>
+</html>
